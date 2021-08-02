@@ -7,6 +7,7 @@
   --card-shadow: 0px 2px 1px -1px rgba(0, 0, 0, 0.2),
     0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 1px 3px 0px rgba(0, 0, 0, 0.12);
   --hero-gradient: rgba(47, 48, 58, 0.4);
+  --drop-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 
 body {
@@ -20,6 +21,13 @@ img {
   max-width: 100%;
 }
 
+a {
+  cursor: pointer;
+}
+
+button {
+  cursor: pointer;
+}
 /*УТИЛИТЫ*/
 
 .list {
@@ -104,6 +112,7 @@ img {
 .button:focus {
   color: var(--primery-bcg-color);
   background-color: var(--accent-color);
+  box-shadow: var(--drop-shadow);
 }
 
 /*NAVIGATION*/
@@ -332,7 +341,8 @@ img {
   fill: currentColor;
 }
 
-.social-link:hover {
+.social-link:hover,
+.social-link:focus {
   color: #fff;
   background-color: var(--accent-color);
   border-radius: 50%;
@@ -374,6 +384,37 @@ img {
   padding-bottom: 30px;
 }
 
+/*КЛИЕНТЫ*/
+
+.clience-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.clience-button {
+  width: 170px;
+  height: 92px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #afb1b8;
+  border-radius: 4px;
+}
+
+.clience-link {
+  fill: #afb1b8;
+}
+
+.clience-button:hover .clience-link,
+.clience-button:focus .clience-link {
+  fill: var(--accent-color);
+}
+
+.clience-button:hover,
+.clience-button:focus {
+  border: 1px solid var(--accent-color);
+}
+
 /*FOOTER*/
 footer {
   padding-top: 60px;
@@ -385,6 +426,10 @@ footer {
   color: var(--primery-bcg-color);
 }
 
+.adress-information {
+  display: flex;
+}
+
 .adress {
   margin-top: 20px;
   margin-bottom: 0;
@@ -394,6 +439,7 @@ footer {
   font-size: 14px;
   line-height: 1.7;
   letter-spacing: 0.03em;
+  width: 231px;
 }
 
 .adress-link {
@@ -416,6 +462,51 @@ footer {
   line-height: 1.71;
   letter-spacing: 0.03em;
   text-decoration: none;
+}
+
+.invite {
+  display: flex;
+  flex-direction: column;
+  margin-left: 70px;
+  margin-top: 12px;
+  width: 206px;
+}
+
+.invite-items {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.invite-header {
+  margin: 0;
+  padding: 0;
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 1.14;
+  letter-spacing: 0.03em;
+  color: var(--primery-bcg-color);
+}
+
+.invite-link {
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  fill: #fff;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+}
+
+.invite-link:hover,
+.invite-link:focus {
+  background-color: var(--accent-color);
+  border-radius: 50%;
+}
+
+.icon-social {
+  fill: #fff;
 }
 
 /*PORTFOLIO*/
@@ -447,6 +538,11 @@ footer {
 }
 .link {
   text-decoration: none;
+}
+
+.card:hover,
+.card:focus {
+  box-shadow: var(--drop-shadow);
 }
 
 .card-set {
