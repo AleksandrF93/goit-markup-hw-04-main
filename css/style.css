@@ -288,10 +288,10 @@ button {
 }
 
 .feature-background {
+  height: 120px;
   display: flex;
   justify-content: center;
-  padding-top: 25px;
-  padding-bottom: 25px;
+  align-items: center;
   background-color: #f5f4fa;
   border-radius: 4px;
   margin-bottom: 30px;
@@ -330,6 +330,7 @@ button {
 }
 
 .team-icons {
+  margin-top: 16px;
   list-style: none;
   display: flex;
   justify-content: space-between;
@@ -337,13 +338,9 @@ button {
   padding-right: 32px;
 }
 
-.icon-link {
-  fill: currentColor;
-}
-
 .social-link:hover,
 .social-link:focus {
-  color: #fff;
+  fill: #fff;
   background-color: var(--accent-color);
   border-radius: 50%;
 }
