@@ -96,6 +96,9 @@ button {
   line-height: 1.62;
   text-align: center;
   letter-spacing: 0.03em;
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .buttons .btn:not(:last-child) {
@@ -127,16 +130,19 @@ button {
 }
 
 .site-nav .link {
+  position: relative;
+
   display: block;
   padding-top: 32px;
   padding-bottom: 32px;
-
   color: var(--title-text-color);
   font-weight: 500;
   font-size: 14px;
   line-height: 1.14;
   letter-spacing: 0.02em;
   text-decoration: none;
+
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .site-nav .link:hover,
 .site-nav .link:focus {
@@ -144,6 +150,20 @@ button {
 }
 .site-nav .link.current {
   color: var(--accent-color);
+}
+
+.link.current::after {
+  content: " ";
+  display: block;
+  bottom: 0;
+  left: 0;
+
+  position: absolute;
+
+  width: 100%;
+  height: 4px;
+  border-radius: 2px;
+  background-color: var(--accent-color);
 }
 
 /*CONNECT*/
@@ -157,6 +177,8 @@ button {
   letter-spacing: 0.02em;
   text-decoration: none;
   display: inline-flex;
+
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .connect:hover,
@@ -299,6 +321,31 @@ button {
 
 /*ЧЕМ ЗАНИМАЕМСЯ*/
 
+.work-image {
+  position: relative;
+}
+
+.work-title {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 70px;
+  background-color: rgba(47, 48, 58, 0.8);
+  padding-top: 27px;
+  padding-bottom: 27px;
+}
+
+.work-header {
+  margin-top: 0;
+  margin-bottom: 0;
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 1.14;
+  text-align: center;
+  letter-spacing: 0.03em;
+  color: var(--primery-bcg-color);
+}
+
 .section.work {
   padding-top: 0;
 }
@@ -327,6 +374,7 @@ button {
 .team-item {
   box-shadow: var(--card-shadow);
   border-radius: 0px 0px 4px 4px;
+  background-color: var(--primery-bcg-color);
 }
 
 .team-icons {
@@ -352,6 +400,10 @@ button {
   align-items: center;
   justify-content: center;
   fill: #afb1b8;
+  background-color: var(--primery-bcg-color);
+  border-radius: 50%;
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .team-item .profession {
@@ -396,10 +448,12 @@ button {
   justify-content: center;
   border: 1px solid #afb1b8;
   border-radius: 4px;
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .clience-link {
   fill: #afb1b8;
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .clience-button:hover .clience-link,
@@ -459,6 +513,7 @@ footer {
   line-height: 1.71;
   letter-spacing: 0.03em;
   text-decoration: none;
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .invite {
@@ -494,6 +549,7 @@ footer {
   fill: #fff;
   background-color: rgba(255, 255, 255, 0.1);
   border-radius: 50%;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .invite-link:hover,
@@ -504,6 +560,17 @@ footer {
 
 .icon-social {
   fill: #fff;
+}
+
+/*MODAL*/
+
+.backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.2);
 }
 
 /*PORTFOLIO*/
@@ -537,11 +604,6 @@ footer {
   text-decoration: none;
 }
 
-.card:hover,
-.card:focus {
-  box-shadow: var(--drop-shadow);
-}
-
 .card-set {
   display: flex;
   flex-wrap: wrap;
@@ -561,4 +623,39 @@ footer {
 
 .card-content {
   padding: 20px 24px;
+}
+
+.card-thumb {
+  position: relative;
+  overflow: hidden;
+}
+
+.card-overlay {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  background-color: rgba(33, 150, 243, 0.9);
+  top: 100%;
+  left: 0;
+
+  padding: 63px 24px;
+  font-size: 18px;
+  line-height: 1.56;
+  letter-spacing: 0.03em;
+  color: #ffffff;
+
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.card {
+  transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.card:hover .card-overlay,
+.card .link:focus .card-overlay {
+  transform: translateY(-100%);
+}
+
+.link:hover,
+.link:focus {
+  box-shadow: var(--drop-shadow);
 }
